@@ -1,0 +1,40 @@
+package com.corejava.jdbc;
+ 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+ 
+import org.apache.commons.*;
+import org.apache.commons.dbcp2.BasicDataSource;
+ 
+public class BasicDataSourceTest {
+	public static void main(String[] args) throws Exception {
+		System.out.println("Hi");
+		BasicDataSource bs = new BasicDataSource();
+		bs.setDriverClassName("oracle.jdbc.driver.OracleDriver");
+		bs.setUrl("jdbc:oracle:thin:@localhost:1521:xe");
+		bs.setUsername("system");
+		bs.setPassword("1234");
+		Connection conn = bs.getConnection();
+
+		PreparedStatement stmt = null;
+		try {
+			conn = bs.getConnection();
+			stmt = conn.prepareStatement("select * from department");
+			ResultSet rs = stmt.executeQuery();
+			while (rs.next()) {
+				System.out.println(rs.getInt("ID") + " - " + rs.getString("NAME"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if (stmt != null) {
+				stmt.close();
+			}
+			if (conn != null) {
+				conn.close();
+			}
+		}
+	}
+}

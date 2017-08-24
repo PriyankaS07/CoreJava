@@ -1,0 +1,9 @@
+package com.corejava.lambda;
+
+@FunctionalInterface
+interface MathOperation<T>{
+	T operation(T t1, T t2);
+}
+public class ArithmeticOperationsTest {
+MathOperation operation=(a,b)-> a+b;
+}

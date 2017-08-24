@@ -1,0 +1,34 @@
+package com.corejava.lambda;
+
+import java.util.*;
+class Order{
+	int price;
+	String status;
+	public Order(int price,String status){
+		this.price=price;
+		this.status=status;
+	}
+	@Override
+	public String toString() {
+		
+		return "Price " +price+" Status"+status;
+	}
+}
+public class OrdersTest {
+	public static void main(String[] args){
+	Order order1=new Order(1000,"PASS");
+	Order order2=new Order(500,"Fail");
+	Order order3=new Order(800,"PASS");
+	Order order4=new Order(400,"Fail");
+	Order order5=new Order(1200,"PASS");
+	
+	List<Order> list=new ArrayList<Order>();
+	list.add(order1);
+	list.add(order2);
+	list.add(order3);
+	list.add(order4);
+	list.add(order5);
+	
+	
+}
+}

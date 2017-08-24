@@ -1,0 +1,19 @@
+package com.corejava.generics;
+
+public class GenericTest<T> {
+	
+		private T t; 
+		public void set(T t) { 
+			this.t = t; 
+			}  
+		public T get() { 
+			return t; 
+			} 
+	
+	 public static void main(String[] args) {
+		GenericTest<Integer> box = new GenericTest<Integer>();
+		box.set(12); 
+		int x = box.get(); 
+		System.out.println(x);
+}
+}

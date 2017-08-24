@@ -1,0 +1,16 @@
+package com.corejava.lambda;
+
+import java.util.ArrayList;
+import java.util.*;
+
+public class StringConstruct {
+	
+public static void main(String[] args) {
+	List<String> list=new ArrayList<String>();
+	list.add("Orange");
+	list.add("Key");
+	list.add("Apple");
+	list.add("Yes");
+}
+
+}

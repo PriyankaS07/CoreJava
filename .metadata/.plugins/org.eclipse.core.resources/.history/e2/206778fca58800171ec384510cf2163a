@@ -1,0 +1,11 @@
+package com.spring.FirstDemo;
+
+import org.omg.CORBA.portable.ApplicationException;
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+        
+    }
+}

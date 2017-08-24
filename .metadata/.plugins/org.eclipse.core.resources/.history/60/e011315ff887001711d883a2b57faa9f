@@ -1,0 +1,10 @@
+package com.jsp.shopping;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class BookBean {
+	String compbooks[]=request.getParameterValues("book");
+	ArrayList<String> list=new ArrayList<String>(Arrays.asList(compbooks));
+
+}

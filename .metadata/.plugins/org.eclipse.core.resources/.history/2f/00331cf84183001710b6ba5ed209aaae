@@ -1,0 +1,22 @@
+package com.corejava.lambda;
+
+import java.util.ArrayList;
+import java.util.*;
+
+public class StringConstruct {
+	
+public static void main(String[] args) {
+	List<String> list=new ArrayList<String>();
+	list.add("Orange");
+	list.add("Key");
+	list.add("Apple");
+	list.add("Yes");
+	StringBuilder s1 =new StringBuilder();
+	for(String s:list)
+	{
+		s1.append(s.substring(0,1));
+	}
+System.out.println(s1);
+}
+
+}

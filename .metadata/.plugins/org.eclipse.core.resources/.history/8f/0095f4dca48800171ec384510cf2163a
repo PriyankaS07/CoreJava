@@ -1,0 +1,11 @@
+package com.spring.FirstDemo;
+
+public class Order {
+	public int orderNo;
+	Item item;
+	public Order(int orderNo, Item item) {
+		super();
+		this.orderNo = orderNo;
+		this.item = item;
+	}
+}

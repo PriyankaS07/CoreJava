@@ -1,0 +1,48 @@
+package com.corejava.jdbc;
+
+ 
+
+ 
+
+import java.sql.*;
+import javax.sql.*;
+import org.apache.commons.*;
+import org.apache.commons.dbcp2.BasicDataSource;
+public class BasicDataSourceTest {
+
+	public static void main(String[] args) throws Exception {
+		// Creates a BasicDataSource
+				BasicDataSource bdata = new BasicDataSource();
+		 		bdata.setDriverClassName("oracle.jdbc.driver.OracleDriver");
+		 		bdata.setUrl("jdbc:oracle:thin:@localhost:1521:xe");
+				bdata.setUsername("system");
+		 		bdata.setPassword("1234");
+		 		bdata.setMinIdle(5);
+		 		bdata.setMaxIdle(10);
+		 		bdata.setMaxTotal(1000);
+
+				Connection conn = null;
+		 Statement stmt=null;
+		
+				try {
+					conn = bdata.getConnection();
+					 stmt=conn.createStatement();
+					//stmt = conn.prepareStatement("Create table personDetails(ID  Num,Name Varchar(20), photoId BLOB ;");
+				
+					ResultSet rs = stmt.executeQuery("desc person");
+					System.out.println("Created");
+					while (rs.next()) {
+						System.out.println(rs.getString(0)+rs.getString(1));
+					}
+				} catch (SQLException e) {
+					e.printStackTrace();
+				} finally {
+	
+						stmt.close();
+						conn.close();
+					
+				}
+			}
+		}
+	
+

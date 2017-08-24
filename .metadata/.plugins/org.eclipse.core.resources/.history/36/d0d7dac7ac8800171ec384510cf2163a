@@ -1,0 +1,29 @@
+package com.spring.FirstDemo;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+public class Employee {
+	private String eName;
+	private int id;
+	public Employee() {
+		super();
+	}
+	public Employee(String eName, int id) {
+		super();
+		this.eName = eName;
+		this.id = id;
+	}
+	public String geteName() {
+		return eName;
+	}
+	public void seteName(String eName) {
+		this.eName = eName;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+}

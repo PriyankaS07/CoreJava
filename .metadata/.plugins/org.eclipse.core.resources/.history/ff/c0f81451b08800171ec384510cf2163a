@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+	<!-- Enable Annotation based configuration -->
+	<context:annotation-config />
+
+	<!-- <bean id="item1" class="com.spring.FirstDemo.Item">
+	    <property name="name" value="Chair" />
+	    <property name="price" value="120" />
+	</bean>
+	
+	<bean id="item2" class="com.spring.FirstDemo.Item">
+	    <property name="name" value="Table" />
+	    <property name="price" value="220" />
+	</bean>
+ 	
+	<bean id="order1" class="com.spring.FirstDemo.Order">
+	    <property name="orderNo" value="101" />
+	    <property name="item" ref="item1" />
+	</bean>
+	<bean id="order2" class="com.spring.FirstDemo.Order">
+	    <property name="orderNo" value="102" />
+	    <property name="item" ref="item2" />
+	</bean> -->
+	<bean id="dept" class="com.spring.FirstDemo.Department">
+	    <property name="deptName" value="Sales" />
+	    <property name="deptNo" value="1" />
+	</bean>
+	<bean id="dept2" class="com.spring.FirstDemo.Department">
+	    <property name="deptName" value="HR" />
+	    <property name="deptNo" value="2" />
+	</bean>
+	<bean id="employee" class="com.spring.FirstDemo.Employee" autowire="byName">
+	    <property name="id" value="101" />
+	</bean>
+</beans>
+
+
+
